@@ -12,13 +12,13 @@
  *
  */
 metadata {
-	definition (name: "Z-Wave Sound Sensor", namespace: "smartthings", author: "SmartThings", ocfDeviceType: "x.com.st.d.sensor.smoke") {
+	definition (name: "Z-Wave Sound Sensor", namespace: "smartthings", author: "SmartThings", ocfDeviceType: "x.com.st.d.siren") {
 		capability "Sound Sensor"
 		capability "Sensor"
 		capability "Battery"
 		capability "Health Check"
 
-		fingerprint mfr: "014A", prod: "0005", model: "000F", deviceJoinName: "Ecolink Firefighter"
+		fingerprint mfr: "014A", prod: "0005", model: "000F", deviceJoinName: "Ecolink Sound Sensor" //Ecolink Firefighter
 	}
 
 	tiles (scale: 2) {

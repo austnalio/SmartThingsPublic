@@ -26,6 +26,13 @@ metadata {
 		capability "Relative Humidity Measurement"
 		capability "Health Check"
 
+		// New discrete thermostat capabilities, added to replace "Thermostat" and prepare for migration to st-schema
+		capability "Thermostat Cooling Setpoint"
+		capability "Thermostat Heating Setpoint"
+		capability "Thermostat Mode"
+		capability "Thermostat Fan Mode"
+		capability "Thermostat Operating State"
+
 		command "generateEvent"
 		command "resumeProgram"
 		command "switchMode"
@@ -232,7 +239,7 @@ def generateEvent(Map results) {
 }
 
 //return descriptionText to be shown on mobile activity feed
-private getThermostatDescriptionText(name, value, linkText) {
+def getThermostatDescriptionText(name, value, linkText) {
 	if(name == "temperature") {
 		return "temperature is ${value}°${location.temperatureScale}"
 
